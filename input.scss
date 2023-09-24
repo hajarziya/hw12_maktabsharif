@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  @apply bg-regal-blue;
+}
+.header {
+  @apply bg-light-green p-5 flex justify-between;
+  .btn__home {
+    @apply bg-dark-green p-3 border rounded-lg text-light-green font-bold mr-3;
+  }
+  .header__tasks {
+    @apply text-dark-green font-bold p-3 text-xl;
+    .succes__word {
+      @apply text-light-pink font-extrabold;
+    }
+  }
+  .btn__tasks {
+    @apply bg-dark-green p-3 border rounded-lg text-light-green font-bold mr-3;
+  }
+}
+
+.form {
+  @apply font-bold flex  flex-col gap-5 p-5 justify-center bg-light-green rounded-3xl my-0 mx-5  md:mx-auto mt-10 md:w-6/12;
+  .label {
+    @apply flex flex-col gap-2;
+    .input {
+      @apply border-2 rounded-xl  h-10 px-2;
+    }
+    .discription {
+      @apply h-28;
+    }
+  }
+  .btn__submit {
+    @apply bg-dark-green text-light-green px-10 py-2 w-3/4 rounded-xl mx-auto mt-24;
+  }
+  .container__start {
+    @apply bg-slate-50;
+  }
+}
+.container__start {
+  @apply flex flex-col w-fit lg:w-6/12 border rounded-3xl m-52 p-10  bg-light-green  mx-auto py-32    gap-6;
+  .h__tree {
+    @apply text-4xl font-bold;
+  }
+  .paragraph {
+    @apply font-bold text-xl;
+  }
+  .btn__start {
+    @apply bg-dark-green text-xl text-light-green px-10 py-4  rounded-xl w-3/4 flex justify-center  text-center font-bold ml-24 mt-16;
+  }
+  .img__start {
+    @apply w-fit lg:w-96 lg:hidden;
+  }
+}
+
+.container__tasks {
+  @apply flex flex-col w-fit lg:w-6/12 border rounded-3xl m-5 p-10  bg-light-green  mx-auto;
+}
+.tasks__list {
+  @apply flex gap-3 flex-col;
+  .task__box {
+    @apply bg-white border rounded-xl py-6 px-3 mx-auto flex justify-between;
+    width: 100%;
+    .task__box--content {
+      min-width: 300px;
+
+      .wrapper__btns {
+        @apply flex items-center;
+      }
+    }
+
+    .task__box--title {
+      @apply flex text-center items-center justify-start gap-3;
+
+      .checked {
+        @apply w-8 h-8 border-white rounded-full bg-light-green;
+      }
+      .title {
+        @apply font-bold text-xl text-dark-green;
+      }
+      .date {
+        @apply text-gray-400 font-bold;
+      }
+    }
+  }
+}
+
+.container__tasks--discription {
+  .discription {
+    @apply text-dark-green pl-10;
+  }
+}
+
+.pagination {
+  @apply flex gap-6 font-bold text-lg pt-5 overflow-scroll max-w-lg mx-auto;
+
+  .active_btn {
+    @apply text-white bg-dark-green rounded-full;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}
+
+.check__container {
+  @apply block relative cursor-pointer pl-7;
+
+  .checkmark {
+    @apply absolute -top-3 left-2 w-6 h-6 bg-gray-100 rounded;
+
+    &:after {
+      @apply hidden ml-2 mt-0.5 w-2 h-4 border-solid border-white border-b-2 border-r-2 rotate-45;
+      content: "";
+    }
+  }
+
+  .checkbox_input {
+    @apply absolute opacity-0 cursor-pointer w-0 h-0;
+
+    &:checked ~ .checkmark {
+      @apply bg-light-pink;
+      &:after {
+        @apply block;
+      }
+    }
+  }
+}
+
+.confirm__overlayer {
+  @apply hidden fixed bg-dark-green-opacity right-0 left-0 top-0 bottom-0 justify-center items-center;
+
+  .confirm__container {
+    @apply bg-white w-fit p-24 rounded-3xl;
+
+    .positive {
+      @apply bg-dark-green px-10 text-white rounded py-2;
+    }
+    .negative {
+      @apply bg-light-pink px-10 text-white rounded mx-5  py-2;
+    }
+
+    .title {
+      @apply mb-5 font-bold;
+    }
+  }
+}
